@@ -30,6 +30,9 @@ docker-machine ssh $DROPLET_NAME
 ## Get the docker configuration in the droplet
 git clone https://github.com/Platyplus/odk-server
 ## Build the docker files
+docker build --pull -t odk/sync_endpoint https://github.com/opendatakit/sync-endpoint-containers.git
+docker build --pull -t odk/sync-web-ui https://github.com/opendatakit/sync-endpoint-web-ui.git
+
 cd odk-server
 docker build -t odk/db-bootstrap db-bootstrap
 docker build -t odk/openldap openldap
