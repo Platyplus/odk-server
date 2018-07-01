@@ -44,9 +44,15 @@ docker-machine ssh $DROPLET_NAME -L 0.0.0.0:4000:localhost:40000
 Browse to https://localhost:40000/
 Default admin is cn=admin,dc=platyplus,dc=io, password admin
 See https://docs.opendatakit.org/odk2/sync-endpoint/#ldap
+
 # Update ODK
 ## TODO
-
+## Pull last changes from GitHub
+cd odk-server
+git pull origin master
+## TODO rebuild images?
+## Run the stack
+docker stack deploy -c docker-compose.yml odkstack
 
 
 
